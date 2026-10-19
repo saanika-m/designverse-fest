@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DesignVerse 2026 | Student Design & Innovation Fest</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navyBg: '#0B132B',       /* Main Deep Navy Background */
+                        navyCard: '#1C2541',     /* Card Background */
+                        navyLight: '#3A506B',    /* Light Blue Borders / Accents */
+                        iceBlue: '#E0FBFC',      /* Primary Crisp Text Color */
+                        amberAccent: '#FF9F1C',  /* Vibrant Amber/Orange CTA & Highlights */
+                        yellowAccent: '#FFD166'  /* Warm Yellow Highlights (#FFD166) */
+                    },
+                    fontFamily: {
+                        heading: ['Georgia', 'serif'],
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-navyBg text-iceBlue font-sans relative antialiased">
+
+<!-- Top Fixed Navigation -->
+    <header class="fixed top-0 left-0 w-full z-40 p-4 md:p-6 flex justify-between items-center pointer-events-none">
+        <div class="pointer-events-auto flex items-center gap-3 bg-navyBg/90 backdrop-blur-md px-3 py-1.5 rounded-full border border-navyLight/40 shadow-lg">
+            <!-- Replacing DV text bubble with your custom logo -->
+            <img src="logo.jpg" alt="DesignVerse Logo" class="w-9 h-9 object-contain rounded-full border border-yellowAccent/50 bg-navyBg">
+            <span class="font-heading font-bold text-lg text-yellowAccent pr-2">DesignVerse</span>
+        </div>
+
+        <button onclick="toggleMenu()" class="pointer-events-auto p-3 bg-amberAccent text-navyBg font-bold rounded-full shadow-lg hover:bg-yellowAccent transition">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+    </header>
+
+    <!-- Side Navigation Panel -->
+    <div id="sidePanel" class="fixed inset-y-0 right-0 w-72 bg-navyCard border-l border-navyLight/40 shadow-2xl transform translate-x-full transition-transform duration-300 z-50 flex flex-col p-8 pt-24">
+        <nav class="flex flex-col gap-6 text-xl font-heading text-iceBlue">
+            <a href="#hero" onclick="closeMenu()" class="hover:text-amberAccent transition">Home</a>
+            <a href="#about" onclick="closeMenu()" class="hover:text-amberAccent transition">About Fest</a>
+            <a href="#timeline" onclick="closeMenu()" class="hover:text-amberAccent transition">Chronological Timeline</a>
+            <a href="#events" onclick="closeMenu()" class="hover:text-amberAccent transition">Event Catalog</a>
+        </nav>
+    </div>
+    <div id="overlay" onclick="closeMenu()" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 hidden"></div>
+
+    <!-- HERO SECTION (Split Screen Layout) -->
+    <section id="hero" class="w-full min-h-screen flex flex-col md:flex-row pt-20 md:pt-0">
+        <!-- LEFT: Full-Bleed Poster Container -->
+        <div class="w-full md:w-1/2 min-h-[85vh] md:min-h-screen bg-navyCard relative flex items-center justify-center p-0 overflow-hidden">
+            <div class="w-full h-full min-h-[85vh] md:min-h-screen flex flex-col justify-between p-8 md:p-12 text-center bg-cover bg-center" style="background-image: linear-gradient(to bottom, rgba(11,19,43,0.35), rgba(11,19,43,0.85)), url('https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?q=80&w=1000');">
+                
+<!-- Poster Center with Your New Logo -->
+                <div class="my-auto">
+                    <div class="mb-4 flex justify-center">
+                        <img src="logo.jpg" alt="Logo" class="w-32 h-32 md:w-40 md:h-40 object-contain drop-shadow-lg rounded-full border-2 border-yellowAccent/40 p-1 bg-navyBg/60">
+                    </div>
+
+                    <h1 class="font-heading font-black text-4xl md:text-6xl text-white tracking-tight mb-2">DesignVerse</h1>
+                    <p class="text-amberAccent font-bold text-sm uppercase tracking-wider">A Student Design & Innovation Fest</p>
+                    <p class="text-iceBlue/90 text-sm italic mt-3 max-w-sm mx-auto">"Immerse in the blue, craft the extraordinary."</p>
+                </div>
+
+                <div class="bg-navyBg/90 border border-navyLight rounded-xl p-3 text-xs text-iceBlue font-medium space-y-1">
+                    <p class="text-yellowAccent font-bold">📅 Oct 22nd – 23rd, 2026 | ⏰ 11:00 AM – 9:00 PM</p>
+                    <p>📍 IGDTUW Campus, Kashmere Gate, New Delhi</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT: Hero Intro + Inline CTA Button -->
+        <div id="about" class="w-full md:w-1/2 p-8 md:p-16 flex flex-col justify-center bg-navyBg">
+            <span class="text-amberAccent text-xs font-black uppercase tracking-widest mb-2">Welcome All!</span>
+            <h4 class="font-heading text-3xl md:text-5xl text-white font-bold mb-6 leading-tight"> A touch of creativity here, a sprinkle of innovation there...</h4>
+            <p class="text-iceBlue/80 text-base leading-relaxed mb-6">
+                DesignVerse is an open space where design, art, technology, and expression come together. Whether you're here to compete, build skills, set up a stall, or enjoy live acoustic sets, there is a place for you across our two-day festival.
+            </p>
+            
+            <div class="p-4 bg-navyCard rounded-2xl border border-navyLight/50 space-y-2 mb-8">
+                <p class="text-xs text-amberAccent font-bold uppercase">Fest Highlights</p>
+                <p class="text-xs text-iceBlue/80">• 3 Flagship Sessions & Competitions</p>
+                <p class="text-xs text-iceBlue/80">• Creator Bazaar & Food Stalls</p>
+                <p class="text-xs text-iceBlue/80">• Live Music & Evening Acoustic Sets</p>
+            </div>
+
+            <!-- Direct CTA Button on Right Column -->
+            <div>
+                <a href="https://forms.gle/C19e5Jztw4339MnS7" target="_blank" class="inline-flex items-center gap-2 bg-gradient-to-r from-amberAccent to-yellowAccent text-navyBg px-8 py-3.5 rounded-full font-black text-xs uppercase tracking-wider hover:scale-105 transition shadow-lg">
+                    <span>Register For Passes</span>
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-navyLight/30 max-w-6xl mx-auto my-4">
+
+    <!-- CHRONOLOGICAL TIMELINE SECTION -->
+    <section id="timeline" class="py-16 px-6 max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+            <span class="text-xs font-bold text-amberAccent uppercase tracking-widest bg-navyCard px-4 py-1.5 rounded-full border border-navyLight/40">Chronological Schedule</span>
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-white mt-4">Fest Timeline</h2>
+        </div>
+
+        <div class="relative border-l-2 border-amberAccent/50 ml-4 md:ml-32 space-y-10">
+            <!-- Day 1 Event 1 -->
+            <div class="relative pl-8">
+                <div class="w-4 h-4 bg-amberAccent rounded-full absolute -left-[9px] top-1 border-4 border-navyBg"></div>
+                <span class="text-xs font-bold text-yellowAccent">Day 1: Oct 22 • 10:30
+                 AM – 01:00 PM</span>
+                <h3 class="font-heading text-xl font-bold text-white">Opening Keynote & Canvas Unveiling</h3>
+                <p class="text-xs text-iceBlue/70">Auditorium • Kickoff session and festival pass collection.</p>
+            </div>
+
+            <!-- Day 1 Event 2 -->
+            <div class="relative pl-8">
+                <div class="w-4 h-4 bg-amberAccent rounded-full absolute -left-[9px] top-1 border-4 border-navyBg"></div>
+                <span class="text-xs font-bold text-yellowAccent">Day 1: Oct 22 • 01:30 PM – 04:30 PM</span>
+                <h3 class="font-heading text-xl font-bold text-white">Prism & Pigment: The Fluid Art Showcase</h3>
+                <p class="text-xs text-iceBlue/70">Open Courtyard • Hands-on acrylic pour workshop with Guest Artist Ananya R.</p>
+            </div>
+
+            <!-- Day 1 Event 3 -->
+            <div class="relative pl-8">
+                <div class="w-4 h-4 bg-amberAccent rounded-full absolute -left-[9px] top-1 border-4 border-navyBg"></div>
+                <span class="text-xs font-bold text-yellowAccent">Day 1: Oct 22 • 05:00 PM – 09:00 PM</span>
+                <h3 class="font-heading text-xl font-bold text-white">Design UP: 4-Hr Creative Design-a-Thon</h3>
+                <p class="text-xs text-iceBlue/70">Design Lab 2 • Intensive design sprint with ₹50,000 cash prizes & expert mentors.</p>
+            </div>
+
+            <!-- Day 1 & 2 Event 4 -->
+            <div class="relative pl-8">
+                <div class="w-4 h-4 bg-amberAccent rounded-full absolute -left-[9px] top-1 border-4 border-navyBg"></div>
+                <span class="text-xs font-bold text-yellowAccent">Day 1 & 2: Oct 22 – 23 • All Day (10:00 AM – 09:00 PM)</span>
+                <h3 class="font-heading text-xl font-bold text-white">The Bazaar: Creator & Food Marketplace</h3>
+                <p class="text-xs text-iceBlue/70">Campus Grounds • Student creator stalls, crochet, art supplies, and food sponsors.</p>
+            </div>
+
+            <!-- Day 2 Event 5 -->
+            <div class="relative pl-8">
+                <div class="w-4 h-4 bg-amberAccent rounded-full absolute -left-[9px] top-1 border-4 border-navyBg"></div>
+                <span class="text-xs font-bold text-yellowAccent">Day 2: Oct 23 • 06:30 PM – 09:00 PM</span>
+                <h3 class="font-heading text-xl font-bold text-white">Echoes in Blue: Acoustic Night</h3>
+                <p class="text-xs text-iceBlue/70">Main Stage • Grand finale concert featuring student bands and guest artists.</p>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-navyLight/30 max-w-6xl mx-auto my-4">
+
+    <!-- DETAILED EVENT CATALOG (Matching Timeline Chronological Order) -->
+    <section id="events" class="py-16 px-6 max-w-6xl mx-auto space-y-20 pb-20">
+        <div class="text-center mb-12">
+            <span class="text-xs font-bold text-amberAccent uppercase tracking-widest bg-navyCard px-4 py-1.5 rounded-full border border-navyLight/40">In-Depth Catalog</span>
+            <h2 class="font-heading text-3xl md:text-5xl font-bold text-white mt-4">Event & Competition Details</h2>
+        </div>
+
+        <!-- EVENT 1: Fluid Art Showcase (Oct 22, 1:30 PM) [Image Left, Text Right] -->
+        <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+            <div class="w-full md:w-1/2">
+                <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=800" alt="Art Workshop" class="w-full h-80 object-cover rounded-2xl border border-navyLight shadow-xl">
+            </div>
+            <div class="w-full md:w-1/2 space-y-4">
+                <span class="text-xs font-bold text-yellowAccent uppercase">Workshop Experience</span>
+                <h3 class="font-heading text-3xl font-bold text-white">Prism & Pigment: The Fluid Art Showcase</h3>
+                <p class="text-xs text-amberAccent font-bold">📍 Open Courtyard | 📅 Oct 22 | ⏰ 01:30 PM – 04:30 PM</p>
+                <p class="text-iceBlue/80 text-sm leading-relaxed">
+                    Step into an expressive masterclass led by celebrated artist Ananya R. Learn the science of fluid density, pigment blending, and dirty pours. Every registered participant receives an individual canvas kit to create and take home their artwork.
+                </p>
+                <div class="pt-2">
+                    <a href="https://forms.google.com" target="_blank" class="inline-block bg-amberAccent text-navyBg px-6 py-2.5 rounded-full font-bold text-xs uppercase hover:bg-yellowAccent transition">Register For Workshop</a>
+                </div>
+            </div>
+        </div>
+
+        <hr class="border-navyLight/20">
+
+        <!-- EVENT 2: Design UP (Oct 22, 5:00 PM) [Text Left, Image Right] -->
+        <div class="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-12">
+            <div class="w-full md:w-1/2">
+                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800" alt="Design Competition" class="w-full h-80 object-cover rounded-2xl border border-navyLight shadow-xl">
+            </div>
+            <div class="w-full md:w-1/2 space-y-4">
+                <span class="text-xs font-bold text-amberAccent uppercase">Flagship Competition</span>
+                <h3 class="font-heading text-3xl font-bold text-white">Design UP: 4-Hr Creative Design-a-Thon</h3>
+                <p class="text-xs text-yellowAccent font-bold">📍 Design Lab 2 | 📅 Oct 22 | ⏰ 05:00 PM – 09:00 PM | Prize Pool: ₹50,000</p>
+                <p class="text-iceBlue/80 text-sm leading-relaxed">
+                    Our premier 4-hour design sprint where solo creators or teams of up to 4 solve real-world UX and visual design prompts live. Compete for cash prizes, industry mentorship, and certificates.
+                </p>
+
+                <!-- Expandable Accordion for Judge & Track Details -->
+                <details class="bg-navyCard border border-navyLight/50 rounded-xl p-3 text-xs text-iceBlue cursor-pointer transition">
+                    <summary class="font-bold text-yellowAccent hover:text-amberAccent">Click for Jury & Problem Statement Tracks &#9660;</summary>
+                    <div class="mt-3 space-y-2 border-t border-navyLight/30 pt-2 text-iceBlue/90">
+                        <p><strong class="text-amberAccent">Lead Judge:</strong> Rohan Sharma (Senior Design Strategist at Adobe India)</p>
+                        <p><strong class="text-amberAccent">Competition Tracks:</strong></p>
+                        <ul class="list-disc list-inside space-y-1 pl-1">
+                            <li>Accessible UI/UX for Senior Citizens</li>
+                            <li>Sustainable Campus Tech Solutions</li>
+                            <li>Interactive Digital Storytelling</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <div class="pt-2">
+                    <a href="https://forms.google.com" target="_blank" class="inline-block bg-amberAccent text-navyBg px-6 py-2.5 rounded-full font-bold text-xs uppercase hover:bg-yellowAccent transition">Register Team</a>
+                </div>
+            </div>
+        </div>
+
+        <hr class="border-navyLight/20">
+
+        <!-- EVENT 3: The Bazaar Marketplace (Oct 22–23, All Day) [Image Left, Text Right] -->
+        <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+            <div class="w-full md:w-1/2">
+                <img src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?q=80&w=800" alt="Creator Marketplace" class="w-full h-80 object-cover rounded-2xl border border-navyLight shadow-xl">
+            </div>
+            <div class="w-full md:w-1/2 space-y-4">
+                <span class="text-xs font-bold text-yellowAccent uppercase">Creator & Food Expo</span>
+                <h3 class="font-heading text-3xl font-bold text-white">The Bazaar: Creator & Food Marketplace</h3>
+                <p class="text-xs text-amberAccent font-bold">📍 Campus Ground | 📅 Oct 22 & 23 | ⏰ 10:00 AM – 09:00 PM</p>
+                <p class="text-iceBlue/80 text-sm leading-relaxed">
+                    A vibrant flea market featuring student-run stalls for handmade art, paintings, crocheted plushies, organic body scrubs, art supplies, and henna. Food partners include Domino's, Waffle Co., and local dessert pop-ups!
+                </p>
+                <div class="pt-2">
+                    <a href="https://forms.google.com" target="_blank" class="inline-block bg-amberAccent text-navyBg px-6 py-2.5 rounded-full font-bold text-xs uppercase hover:bg-yellowAccent transition">Apply For A Stall Spot</a>
+                </div>
+            </div>
+        </div>
+
+        <hr class="border-navyLight/20">
+
+        <!-- EVENT 4: Echoes in Blue Acoustic Night (Oct 23, 6:30 PM) [Text Left, Image Right] -->
+        <div class="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-12">
+            <div class="w-full md:w-1/2">
+                <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=800" alt="Music Concert" class="w-full h-80 object-cover rounded-2xl border border-navyLight shadow-xl">
+            </div>
+            <div class="w-full md:w-1/2 space-y-4">
+                <span class="text-xs font-bold text-amberAccent uppercase">Live Music Finale</span>
+                <h3 class="font-heading text-3xl font-bold text-white">Echoes in Blue: Acoustic Night</h3>
+                <p class="text-xs text-yellowAccent font-bold">📍 Main Stage | 📅 Oct 23 | ⏰ 06:30 PM – 09:00 PM</p>
+                <p class="text-iceBlue/80 text-sm leading-relaxed">
+                    Unwind on the fest's final evening with soothing acoustic sets and indie performances. Features student band showcases and special guest artists under ambient night lighting setups.
+                </p>
+                <div class="pt-2">
+                    <a href="https://forms.google.com" target="_blank" class="inline-block bg-amberAccent text-navyBg px-6 py-2.5 rounded-full font-bold text-xs uppercase hover:bg-yellowAccent transition">Reserve Entry Pass</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navyCard border-t border-navyLight/40 py-8 px-6 text-center text-xs text-iceBlue/60">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <p>© 2026 DesignVerse IGDTUW. Built for student creators.</p>
+            <div class="flex space-x-6 text-yellowAccent font-semibold">
+                <a href="#hero" class="hover:underline">Home</a>
+                <a href="#timeline" class="hover:underline">Schedule</a>
+                <a href="#events" class="hover:underline">Registrations</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Side Panel -->
+    <script>
+        function toggleMenu() {
+            document.getElementById('sidePanel').classList.toggle('translate-x-full');
+            document.getElementById('overlay').classList.toggle('hidden');
+        }
+        function closeMenu() {
+            document.getElementById('sidePanel').classList.add('translate-x-full');
+            document.getElementById('overlay').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
