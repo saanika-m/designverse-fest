@@ -137,6 +137,13 @@
                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                 </a>
             </div>
+            <!-- Single Participation Action -->
+            <div>
+               <button onclick="openParticipationModal()" class="inline-flex items-center gap-2 bg-gradient-to-r from-amberAccent to-yellowAccent text-navyBg px-8 py-3.5 rounded-full font-black text-xs uppercase tracking-wider hover:scale-105 transition shadow-lg">
+                  <span>Click Here to Participate</span>
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+              </button>
+        </div>
         </div>
     </section>
 
@@ -338,6 +345,72 @@
             document.getElementById('sidePanel').classList.add('translate-x-full');
             document.getElementById('overlay').classList.add('hidden');
         }
+
+        // Modal Logic
+function openParticipationModal() {
+    document.getElementById('partModal').classList.remove('hidden');
+}
+function closeParticipationModal() {
+    document.getElementById('partModal').classList.add('hidden');
+}
+
+// Background Audio Logic
+const audio = document.getElementById('bgAudio');
+const musicText = document.getElementById('musicText');
+const musicIcon = document.getElementById('musicIcon');
+
+function toggleAudio() {
+    if (audio.paused) {
+        audio.play();
+        musicText.innerText = "Mute Music";
+        musicIcon.innerText = "🔊";
+    } else {
+        audio.pause();
+        musicText.innerText = "Play Music";
+        musicIcon.innerText = "🎵";
+    }
+}
     </script>
+    <!-- Participation Modal (3 Registration Links) -->
+<div id="partModal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-navyCard border border-amberAccent/40 rounded-2xl p-6 md:p-8 max-w-md w-full relative text-center">
+        <button onclick="closeParticipationModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl font-bold">&times;</button>
+        
+        <span class="text-xs font-bold text-amberAccent uppercase tracking-widest bg-navyBg px-3 py-1 rounded-full border border-navyLight">Participation Hub</span>
+        <h3 class="font-heading text-2xl font-bold text-white mt-3 mb-2">Choose Your Event Registration</h3>
+        <p class="text-xs text-iceBlue/70 mb-6">Select the form corresponding to the event you wish to participate in.</p>
+
+        <div class="space-y-3 text-sm">
+            <!-- Form 1: General Pass & Workshop -->
+            <a href="YOUR_WORKSHOP_GOOGLE_FORM_URL" target="_blank" class="block w-full bg-navyBg hover:bg-navyLight border border-navyLight/60 p-3.5 rounded-xl text-left transition group">
+                <div class="font-bold text-yellowAccent group-hover:text-amberAccent">🎨 Workshop Registration Form</div>
+                <div class="text-xs text-iceBlue/70">Prism & Pigment Fluid Art Masterclass Pass</div>
+            </a>
+
+            <!-- Form 2: Design-a-Thon Competition -->
+            <a href="YOUR_COMPETITION_GOOGLE_FORM_URL" target="_blank" class="block w-full bg-navyBg hover:bg-navyLight border border-navyLight/60 p-3.5 rounded-xl text-left transition group">
+                <div class="font-bold text-yellowAccent group-hover:text-amberAccent">⚡ Design-a-Thon Registration Form</div>
+                <div class="text-xs text-iceBlue/70">The Canvas Clash 4-Hr Creative Sprint Team Entry</div>
+            </a>
+
+            <!-- Form 3: Creator & Food Stall -->
+            <a href="YOUR_STALL_GOOGLE_FORM_URL" target="_blank" class="block w-full bg-navyBg hover:bg-navyLight border border-navyLight/60 p-3.5 rounded-xl text-left transition group">
+                <div class="font-bold text-yellowAccent group-hover:text-amberAccent">🎪 Market Stall Application Form</div>
+                <div class="text-xs text-iceBlue/70">The Bazaar Creator & Food Stall Booking</div>
+            </a>
+        </div>
+    </div>
+</div>
+    <!-- Background Audio Element -->
+<!-- Replace 'background-music.mp3' with your audio file or royalty-free audio URL -->
+<audio id="bgAudio" loop preload="auto">
+    <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=lofi-study-112191.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Persistent Music Toggle Button (Bottom-Right) -->
+<button id="musicBtn" onclick="toggleAudio()" class="fixed bottom-6 right-6 z-40 bg-navyCard/90 border border-yellowAccent/50 text-yellowAccent p-3 rounded-full shadow-2xl hover:scale-110 transition flex items-center gap-2 backdrop-blur-md">
+    <span id="musicIcon" class="text-base">🎵</span>
+    <span id="musicText" class="text-xs font-bold pr-1 hidden sm:inline">Play Music</span>
+</button>
 </body>
 </html>
